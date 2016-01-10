@@ -1,0 +1,7 @@
+Bug分支
+git stash			存储当前工作现场
+git stash list			查看存储的工作现场
+git stash apply			恢复现场
+git stash apply stash@{0}	恢复指定现场
+git stash drop			删除现场
+git stash pop			恢复现场，并删除现场
