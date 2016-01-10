@@ -5,3 +5,50 @@ git stash apply			恢复现场
 git stash apply stash@{0}	恢复指定现场
 git stash drop			删除现场
 git stash pop			恢复现场，并删除现场
+
+Feature 分支
+开发一个新feature，最好新建一个分支；
+git branch -D <name>		如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
+
+多人协作
+git remote
+git remote -v			查看远程库信息
+git push origin dev		推送其他分支
+
+git checkout -b dev origin/dev	创建远程origin的dev分支到本地
+git branch --set-upstream-to=origin/dev	建立本地分支和远程分支的关联
+git pull 			处理冲突
+
+标签
+git tag				查看所有标签
+git tag <name>			对当前分支，新建一个标签
+git tag id			对历史版本，新建标签
+git tag -a <tagname> -m "xxxxx"	指定标签信息
+git tag -s <tagname> -m "xxxxx"	用PGP签名标签
+git show <tagname>		显示标签具体信息
+
+自定义Git
+git config -l			显示配置信息
+git config --global color.ui true	Git显示颜色
+
+忽略特殊文件
+编写 .gitignore 文件，存储要忽略的文件名
+
+配置别名
+git config --global allas.st status
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.unstage 'reset HEAD'
+
+配置Git的时候，加上--global是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。
+每个仓库的Git配置文件都放在.git/config文件中.
+cat .git/config			查看配置文件[allas]后面
+当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中
+
+搭建Git服务器
+
+
+
+
+
